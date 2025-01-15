@@ -49,7 +49,7 @@ public class Libro extends Escrito {
 
     @Override
     public int palabrasTotales(int palabrasPagina) {
-        return getPaginas() * palabrasPagina;
+        return getPaginas() * palabrasPagina * 2;
     }
 
     @Override
@@ -59,12 +59,12 @@ public class Libro extends Escrito {
 
     @Override
     public String toString() {
-        return getTitulo() + "\n" +
+        return getOrigen() + "\n" +
+               getTitulo() + "\n" +
                getAutor() + "\n" +
-               co_autor + "\n" +
                getPaginas() + "\n" +
+               co_autor + "\n" +
                editorial + "\n" +
-               edicion + "\n" +
-               interpretacion;
+               edicion;
     }
 }

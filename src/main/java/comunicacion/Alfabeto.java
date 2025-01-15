@@ -1,38 +1,37 @@
 package comunicacion;
 
+import java.util.List;
+
 public class Alfabeto extends Pictograma {
     
-    private String[] letras;
+    private List<String> letras;
+    private String interpretacion;
 
-    public Alfabeto(String origen, String[] letras) {
+    public Alfabeto(String origen, List<String> letras, String interpretacion) {
         super(origen);
         this.letras = letras;
+        this.interpretacion = interpretacion;
     }
 
-    public String[] getLetras() {
+    public List<String> getLetras() {
         return letras;
     }
 
-    public void setLetras(String[] letras) {
+    public void setLetras(List<String> letras) {
         this.letras = letras;
     }
 
     public Integer cantidadLetras() {
-        return letras.length;
+        return letras.size();
     }
 
     @Override
     public String interpretacion() {
-        // Implementación específica para la interpretación del alfabeto
-        return "Interpretación del alfabeto";
+        return interpretacion;
     }
 
     @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        for (String letra : letras) {
-            sb.append(letra).append(" ");
-        }
-        return sb.toString().trim();
+        return String.join(", ", letras);
     }
 }

@@ -1,14 +1,16 @@
 package comunicacion;
 
+import java.util.List;
+
 public class Tesis extends Escrito {
     
     private String idea;
-    private String[] argumentos;
+    private List<String> argumentos;
     private String conclusion;
     private String referencias;
     private String interpretacion;
 
-    public Tesis(String origen, String titulo, String autor, int paginas, String idea, String[] argumentos, String conclusion, String referencias, String interpretacion) {
+    public Tesis(String origen, String titulo, String autor, int paginas, String idea, List<String> argumentos, String conclusion, String referencias, String interpretacion) {
         super(origen, titulo, autor, paginas);
         this.idea = idea;
         this.argumentos = argumentos;
@@ -25,11 +27,11 @@ public class Tesis extends Escrito {
         this.idea = idea;
     }
 
-    public String[] getArgumentos() {
-        return argumentos;
+    public int getArgumentos() {
+        return argumentos.size();
     }
 
-    public void setArgumentos(String[] argumentos) {
+    public void setArgumentos(List<String> argumentos) {
         this.argumentos = argumentos;
     }
 
@@ -59,7 +61,7 @@ public class Tesis extends Escrito {
 
     @Override
     public int palabrasTotales(int palabrasPagina) {
-        return getPaginas() * palabrasPagina;
+        return getPaginas() * palabrasPagina * 5;
     }
 
     @Override
@@ -69,13 +71,13 @@ public class Tesis extends Escrito {
 
     @Override
     public String toString() {
-        return getTitulo() + "\n" +
+        return getOrigen() + "\n" +
+               getTitulo() + "\n" +
                getAutor() + "\n" +
                getPaginas() + "\n" +
                idea + "\n" +
-               String.join(", ", argumentos) + "\n" +
+               argumentos.size() + "\n" +
                conclusion + "\n" +
-               referencias + "\n" +
-               interpretacion;
+               referencias;
     }
 }

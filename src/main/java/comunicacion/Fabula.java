@@ -29,7 +29,7 @@ public class Fabula extends Escrito {
 
     @Override
     public int palabrasTotales(int palabrasPagina) {
-        return getPaginas() * palabrasPagina;
+        return getPaginas() * palabrasPagina * 1;
     }
 
     @Override
@@ -39,10 +39,10 @@ public class Fabula extends Escrito {
 
     @Override
     public String toString() {
-        return getTitulo() + "\n" +
+        return getOrigen() + "\n" +
+               getTitulo() + "\n" +
                getAutor() + "\n" +
                getPaginas() + "\n" +
-               enseñanzas + "\n" +
-               interpretacion;
+               enseñanzas;
     }
 }
