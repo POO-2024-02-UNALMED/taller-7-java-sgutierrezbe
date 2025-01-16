@@ -11,10 +11,21 @@ public class Tesis extends Escrito {
     private String referencias;
     private String interpretacion;
 
+    // Constructor que acepta un arreglo de argumentos
     public Tesis(String origen, String titulo, String autor, int paginas, String idea, String[] argumentos, String conclusion, String referencias, String interpretacion) {
         super(origen, titulo, autor, paginas);
         this.idea = idea;
         this.argumentos = Arrays.asList(argumentos);
+        this.conclusion = conclusion;
+        this.referencias = referencias;
+        this.interpretacion = interpretacion;
+    }
+
+    // Constructor que acepta una lista de argumentos
+    public Tesis(String origen, String titulo, String autor, int paginas, String idea, List<String> argumentos, String conclusion, String referencias, String interpretacion) {
+        super(origen, titulo, autor, paginas);
+        this.idea = idea;
+        this.argumentos = argumentos;
         this.conclusion = conclusion;
         this.referencias = referencias;
         this.interpretacion = interpretacion;
@@ -28,7 +39,11 @@ public class Tesis extends Escrito {
         this.idea = idea;
     }
 
-    public int getArgumentos() {
+    public List<String> getArgumentos() {
+        return argumentos;
+    }
+
+    public int getCantidadArgumentos() {
         return argumentos.size();
     }
 
