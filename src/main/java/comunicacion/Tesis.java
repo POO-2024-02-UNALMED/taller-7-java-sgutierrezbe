@@ -1,5 +1,6 @@
 package comunicacion;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Tesis extends Escrito {
@@ -10,10 +11,10 @@ public class Tesis extends Escrito {
     private String referencias;
     private String interpretacion;
 
-    public Tesis(String origen, String titulo, String autor, int paginas, String idea, List<String> argumentos, String conclusion, String referencias, String interpretacion) {
+    public Tesis(String origen, String titulo, String autor, int paginas, String idea, String[] argumentos, String conclusion, String referencias, String interpretacion) {
         super(origen, titulo, autor, paginas);
         this.idea = idea;
-        this.argumentos = argumentos;
+        this.argumentos = Arrays.asList(argumentos);
         this.conclusion = conclusion;
         this.referencias = referencias;
         this.interpretacion = interpretacion;

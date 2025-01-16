@@ -1,5 +1,6 @@
 package comunicacion;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class Alfabeto extends Pictograma {
@@ -7,9 +8,9 @@ public class Alfabeto extends Pictograma {
     private List<String> letras;
     private String interpretacion;
 
-    public Alfabeto(String origen, List<String> letras, String interpretacion) {
+    public Alfabeto(String origen, String[] letras, String interpretacion) {
         super(origen);
-        this.letras = letras;
+        this.letras = Arrays.asList(letras);
         this.interpretacion = interpretacion;
     }
 
@@ -35,4 +36,3 @@ public class Alfabeto extends Pictograma {
         return String.join(", ", letras);
     }
 }
-//hola
