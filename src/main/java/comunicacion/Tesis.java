@@ -39,10 +39,6 @@ public class Tesis extends Escrito {
         this.idea = idea;
     }
 
-    public List<String> getArgumentos() {
-        return argumentos;
-    }
-
     public int getCantidadArgumentos() {
         return argumentos.size();
     }
@@ -95,5 +91,13 @@ public class Tesis extends Escrito {
                argumentos.size() + "\n" +
                conclusion + "\n" +
                referencias;
+    }
+
+    public String[] getArgumentos() {
+        return argumentos.toArray(new String[0]);
+    }
+
+    public List<String> getListaArgumentos() {
+        return argumentos;
     }
 }
